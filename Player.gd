@@ -4,6 +4,8 @@ var player_score = 0
 var player_paddles = 3 
 var player_level = 1 
 
+var score_modifier = 20
+
 func _ready():
 	pass
 	
@@ -15,6 +17,27 @@ func _process(delta):
 func score_points():
 	Globals.global_player_score += 1
 	get_node("../ScoreLabel").text = "Score: " + str(Globals.global_player_score)
+	
+	# Give us a new paddle if we get to a certain score 
+	# if we are a multiple of 10 and only paddle one is down 
+	if ((Globals.global_player_score % score_modifier == 0) and (!get_node_or_null("Paddle1").visible) and (get_node_or_null("Paddle2").visible)):
+		get_node("Paddle1").set_collision_layer_bit(0, true)
+		get_node("Paddle1").visible = true
+		get_node("PowerupPlay").play()
+	
+	if ((Globals.global_player_score % score_modifier == 0) and (!get_node_or_null("Paddle2").visible)):
+		get_node("Paddle2").set_collision_layer_bit(0, true)
+		get_node("Paddle2").visible = true
+		get_node("PowerupPlay").play()
+	
+#	if (get_node_or_null("Paddle1")):
+#		player_paddles = 2
+#		get_node("Paddle1").queue_free()
+#	elif (get_node_or_null("Paddle2")):
+#		player_paddles = 1
+#		get_node("Paddle2").queue_free()
+#	else:
+#		print("Game Over")
 	
 	
 	
@@ -33,12 +56,15 @@ func enemy_scored():
 	get_node("BoomPlay").play()
 	get_node("../MadBomber/Timer").stop()
 	
-	if (get_node_or_null("Paddle1")):
+	if (get_node_or_null("Paddle1").visible):
 		player_paddles = 2
-		get_node("Paddle1").queue_free()
-	elif (get_node_or_null("Paddle2")):
+		get_node("Paddle1").set_collision_layer_bit(0, false)
+		get_node("Paddle1").visible = false 
+		#get_node("Paddle1").queue_free()
+	elif (get_node_or_null("Paddle2").visible):
 		player_paddles = 1
-		get_node("Paddle2").queue_free()
+		get_node("Paddle2").set_collision_layer_bit(0, false)
+		get_node("Paddle2").visible = false 
 	else:
 		print("Game Over")
 		get_tree().change_scene("res://scenes/test_gameover.tscn")

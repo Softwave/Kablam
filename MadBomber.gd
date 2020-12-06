@@ -45,8 +45,6 @@ func drop_bomb():
 	get_tree().call_group("bombs", "connect")
 	#add_child_below_node(get_tree().get_root().get_node("."), bomb)
 
-	
-
 func _process(delta):
 	if !(get_node("../Player/Paddle3").get("is_paused")):
 		#print(position.x)
