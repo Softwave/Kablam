@@ -16,8 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Kablam"
-run/main_scene="res://scenes/example_basic.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/test_menu.tscn"
+config/icon="res://icon512.png"
+config/windows_native_icon="res://iconKablam.ico"
+
+[autoload]
+
+Globals="*res://Globals.gd"
 
 [display]
 

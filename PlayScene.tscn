@@ -113,7 +113,7 @@ shape = SubResource( 3 )
 texture = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="MadBomber"]
-wait_time = 0.2
+wait_time = 0.4
 
 [node name="Goal" type="Area2D" parent="."]
 script = ExtResource( 15 )

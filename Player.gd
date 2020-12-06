@@ -13,8 +13,8 @@ func _process(delta):
 
 
 func score_points():
-	player_score += 1
-	get_node("../ScoreLabel").text = "Score: " + str(player_score)
+	Globals.global_player_score += 1
+	get_node("../ScoreLabel").text = "Score: " + str(Globals.global_player_score)
 	
 
 func enemy_scored():

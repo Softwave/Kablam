@@ -67,36 +67,36 @@ func _process(delta):
 		position += velocity * delta
 		
 		# Base the bombers speed on the score of the player 
-		var tmp_player_score = get_node("../Player").player_score
+		var tmp_player_score = Globals.global_player_score
 		if (tmp_player_score < 5):
 			move_speed = 0.5
 			print("level 1")
 		elif (tmp_player_score >= 5 and tmp_player_score < 10):
 			move_speed = 0.75
-			bomb_speed = 75
+			bomb_speed = 55
 			print("level 2")
 		elif(tmp_player_score >= 10 and tmp_player_score < 20):
 			move_speed = 1
-			bomb_speed = 100
+			bomb_speed = 60
 			print("level 3")
 		elif (tmp_player_score >= 20 and tmp_player_score < 30):
 			move_speed = 1.5
-			bomb_speed = 125
+			bomb_speed = 75
 		elif (tmp_player_score >= 30 and tmp_player_score < 40):
 			move_speed = 2
-			bomb_speed = 125
+			bomb_speed = 80
 		elif (tmp_player_score >= 40 and tmp_player_score < 50):
 			move_speed = 3
-			bomb_speed = 150
+			bomb_speed = 100
 		elif (tmp_player_score >= 50 and tmp_player_score < 60):
 			move_speed = 4
-			bomb_speed = 160
+			bomb_speed = 120
 		elif (tmp_player_score >= 60 and tmp_player_score < 70):
 			move_speed = 5
-			bomb_speed = 200
+			bomb_speed = 140
 		else:
 			move_speed = 5
-			bomb_speed = 200
+			bomb_speed = 150
 			print("level last")
 			
 		# Also 
