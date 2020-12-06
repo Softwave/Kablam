@@ -23,3 +23,12 @@ func _process(delta):
 		get_node("../Paddle2").position.x = get_global_mouse_position().x / 4 - 120
 		get_node("../Paddle2").position.x = clamp(position.x, -100, 100)
 	
+
+
+
+
+
+func _on_Paddle3_area_entered(area):
+	print("Paddle 3 hit")
+	get_node("../ScorePlay").play()
+	area.queue_free()

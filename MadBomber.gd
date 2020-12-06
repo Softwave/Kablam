@@ -11,7 +11,7 @@ export var max_speed = 5
 
 
 func rand_position():
-	print("rand position called")
+	#print("rand position called")
 	randomize()
 	rand_pos = rand_range(10, 230)
 
