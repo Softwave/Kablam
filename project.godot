@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Kablam"
+config/description="Catch the bombs! Don't let them hit the ground! "
 run/main_scene="res://scenes/test_menu.tscn"
 config/icon="res://icon512.png"
 config/windows_native_icon="res://iconKablam.ico"
