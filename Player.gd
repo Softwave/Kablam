@@ -1,16 +1,16 @@
 extends Node2D
 
+var player_score = 0
+var player_paddles = 3 
+var player_level = 1 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
+func score_points():
+	player_score += 1
+	get_node("../ScoreLabel").text = "Score: " + str(player_score)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func enemy_scored():
+	print("Enemy scored")
+	get_node("BoomPlay").play()

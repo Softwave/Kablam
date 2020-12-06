@@ -1,7 +1,5 @@
 extends Area2D
 
-var player_score = 0
-var player_paddles = 3 
 var is_paused = true 
 
 func _ready():
@@ -26,9 +24,8 @@ func _process(delta):
 
 
 
-
-
 func _on_Paddle3_area_entered(area):
 	print("Paddle 3 hit")
 	get_node("../ScorePlay").play()
+	get_node("..").score_points()
 	area.queue_free()

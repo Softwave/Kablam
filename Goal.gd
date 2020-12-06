@@ -16,10 +16,6 @@ func _ready():
 #	pass
 
 
-
-func _on_Paddle1_area_entered(area):
-	print("Paddle 1 hit")
-	get_node("../ScorePlay").play()
-	get_node("..").score_points()
-	#$ScorePlay.play()
+func _on_Goal_area_entered(area):
+	get_node("../Player").enemy_scored()
 	area.queue_free()

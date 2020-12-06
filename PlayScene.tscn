@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://paddle1.png" type="Texture" id=1]
 [ext_resource path="res://Apple2.tres" type="DynamicFont" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Paddle1.gd" type="Script" id=11]
 [ext_resource path="res://Paddle2.gd" type="Script" id=12]
 [ext_resource path="res://score.wav" type="AudioStream" id=13]
+[ext_resource path="res://Player.gd" type="Script" id=14]
+[ext_resource path="res://Goal.gd" type="Script" id=15]
+[ext_resource path="res://boom.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.798, 2.57129 )
@@ -34,9 +37,13 @@ texture = ExtResource( 3 )
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2( 120, 110 )
+script = ExtResource( 14 )
 
 [node name="ScorePlay" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 13 )
+
+[node name="BoomPlay" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 16 )
 
 [node name="Paddle1" type="Area2D" parent="Player"]
 script = ExtResource( 11 )
@@ -106,6 +113,7 @@ shape = SubResource( 3 )
 texture = ExtResource( 8 )
 
 [node name="Goal" type="Area2D" parent="."]
+script = ExtResource( 15 )
 
 [node name="Sprite" type="Sprite" parent="Goal"]
 position = Vector2( 120, 134 )
@@ -117,3 +125,4 @@ shape = SubResource( 4 )
 [connection signal="area_entered" from="Player/Paddle1" to="Player/Paddle1" method="_on_Paddle1_area_entered"]
 [connection signal="area_entered" from="Player/Paddle2" to="Player/Paddle2" method="_on_Paddle2_area_entered"]
 [connection signal="area_entered" from="Player/Paddle3" to="Player/Paddle3" method="_on_Paddle3_area_entered"]
+[connection signal="area_entered" from="Goal" to="Goal" method="_on_Goal_area_entered"]

@@ -22,4 +22,5 @@ func _ready():
 func _on_Paddle2_area_entered(area):
 	print("Paddle 2 hit")
 	get_node("../ScorePlay").play()
+	get_node("..").score_points()
 	area.queue_free()
