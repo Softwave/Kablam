@@ -18,6 +18,8 @@ _global_script_class_icons={
 config/name="Kablam"
 config/description="Catch the bombs! Don't let them hit the ground! "
 run/main_scene="res://scenes/test_menu.tscn"
+boot_splash/image="res://coveridea2.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon512.png"
 config/windows_native_icon="res://iconKablam.ico"
 

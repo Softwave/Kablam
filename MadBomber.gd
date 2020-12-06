@@ -70,15 +70,12 @@ func _process(delta):
 		var tmp_player_score = Globals.global_player_score
 		if (tmp_player_score < 5):
 			move_speed = 0.5
-			print("level 1")
 		elif (tmp_player_score >= 5 and tmp_player_score < 10):
 			move_speed = 0.75
 			bomb_speed = 55
-			print("level 2")
 		elif(tmp_player_score >= 10 and tmp_player_score < 20):
 			move_speed = 1
 			bomb_speed = 60
-			print("level 3")
 		elif (tmp_player_score >= 20 and tmp_player_score < 30):
 			move_speed = 1.5
 			bomb_speed = 75
@@ -97,22 +94,17 @@ func _process(delta):
 		else:
 			move_speed = 5
 			bomb_speed = 150
-			print("level last")
+
 			
 		# Also 
 		var bombs = get_tree().get_nodes_in_group("bombs")
 		for bomb in bombs:
 			bomb.bomb_speed = bomb_speed
 			
-	#var enemies = get_tree().get_nodes_in_group("bombs")
-	#for enemy in enemies:
-	#	enemy.queue_free()
-			
-
 		
 		
-	if Input.is_action_just_pressed("test_fire"):
-		drop_bomb()
+	#if Input.is_action_just_pressed("test_fire"):
+	#	drop_bomb()
 
 		
 
