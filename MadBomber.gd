@@ -110,12 +110,6 @@ func _process(delta):
 			bomb.bomb_speed = bomb_speed
 			
 		
-		
-	#if Input.is_action_just_pressed("test_fire"):
-	#	drop_bomb()
-
-		
-
 
 func _on_Timer_timeout():
 	drop_bomb()
