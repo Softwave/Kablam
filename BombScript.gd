@@ -1,8 +1,10 @@
 extends Area2D 
 
-var bomb_speed = 50 
+
+onready var bomb_speed = 50
 
 func _ready():
+	#bomb_speed = get_node("/root/RootNode/MadBomber").bomb_speed
 	pass
 
 func _physics_process(delta):

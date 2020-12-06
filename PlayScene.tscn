@@ -28,7 +28,7 @@ default_font = ExtResource( 2 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 124.714, 1.51837 )
 
-[node name="RootNode" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 position = Vector2( -0.445435, 0 )
 
 [node name="bg" type="Sprite" parent="."]

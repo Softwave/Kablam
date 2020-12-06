@@ -6,6 +6,7 @@ var move_speed = 0.5
 var velocity = Vector2()
 var moving_left = false
 var moving_right = false 
+var bomb_speed = 50
 
 export var max_speed = 5
 
@@ -60,6 +61,34 @@ func _process(delta):
 			#print("We are equal")
 			move_left(delta)
 		position += velocity * delta
+		
+		# Base the bombers speed on the score of the player 
+		var tmp_player_score = get_node("../Player").player_score
+		if (tmp_player_score < 5):
+			move_speed = 0.5
+			print("level 1")
+		elif (tmp_player_score >= 5 and tmp_player_score < 10):
+			move_speed = 1
+			bomb_speed = 100
+			print("level 2")
+		elif(tmp_player_score >= 10 and tmp_player_score < 20):
+			move_speed = 2
+			print("level 3")
+		else:
+			move_speed = 3
+			print("level 4")
+			
+		# Also 
+		var bombs = get_tree().get_nodes_in_group("bombs")
+		for bomb in bombs:
+			bomb.bomb_speed = bomb_speed
+			
+	#var enemies = get_tree().get_nodes_in_group("bombs")
+	#for enemy in enemies:
+	#	enemy.queue_free()
+			
+
+		
 		
 	if Input.is_action_just_pressed("test_fire"):
 		drop_bomb()

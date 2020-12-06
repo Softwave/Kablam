@@ -15,6 +15,7 @@ func _process(delta):
 func score_points():
 	player_score += 1
 	get_node("../ScoreLabel").text = "Score: " + str(player_score)
+	
 
 func enemy_scored():
 	print("Enemy scored")
@@ -38,6 +39,7 @@ func enemy_scored():
 	for enemy in enemies:
 		enemy.queue_free()
 	
+# "."".."
 #	if (player_paddles == 3):
 #		get_node("Paddle1").queue_free()
 #		player_paddles = 2
