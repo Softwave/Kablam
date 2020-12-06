@@ -76,19 +76,19 @@ func _process(delta):
 		elif(tmp_player_score >= 10 and tmp_player_score < 20):
 			move_speed = 1
 			bomb_speed = 60
-		elif (tmp_player_score >= 20 and tmp_player_score < 30):
+		elif (tmp_player_score >= 20 and tmp_player_score < 40):
 			move_speed = 1.5
 			bomb_speed = 75
-		elif (tmp_player_score >= 30 and tmp_player_score < 40):
+		elif (tmp_player_score >= 40 and tmp_player_score < 60):
 			move_speed = 2
 			bomb_speed = 80
-		elif (tmp_player_score >= 40 and tmp_player_score < 50):
+		elif (tmp_player_score >= 60 and tmp_player_score < 80):
 			move_speed = 3
 			bomb_speed = 100
-		elif (tmp_player_score >= 50 and tmp_player_score < 60):
+		elif (tmp_player_score >= 80 and tmp_player_score < 100):
 			move_speed = 4
 			bomb_speed = 120
-		elif (tmp_player_score >= 60 and tmp_player_score < 70):
+		elif (tmp_player_score >= 100 and tmp_player_score < 120):
 			move_speed = 5
 			bomb_speed = 140
 		else:
