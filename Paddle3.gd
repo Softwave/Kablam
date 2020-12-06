@@ -16,10 +16,13 @@ func _process(delta):
 	if (!is_paused):
 		position.x = get_global_mouse_position().x / 4 - 120
 		position.x = clamp(position.x, -100, 100)
-		get_node("../Paddle1").position.x = get_global_mouse_position().x / 4 - 120
-		get_node("../Paddle1").position.x = clamp(position.x, -100, 100)
-		get_node("../Paddle2").position.x = get_global_mouse_position().x / 4 - 120
-		get_node("../Paddle2").position.x = clamp(position.x, -100, 100)
+		if(get_node_or_null("../Paddle1")):
+			get_node_or_null("../Paddle1").position.x = get_global_mouse_position().x / 4 - 120
+			get_node_or_null("../Paddle1").position.x = clamp(position.x, -100, 100)
+		
+		if (get_node_or_null("../Paddle2")):
+			get_node_or_null("../Paddle2").position.x = get_global_mouse_position().x / 4 - 120
+			get_node_or_null("../Paddle2").position.x = clamp(position.x, -100, 100)
 	
 
 

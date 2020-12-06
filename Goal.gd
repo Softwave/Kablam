@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Goal_area_entered(area):
-	get_node("../Player").enemy_scored()
 	area.queue_free()
+	get_node("../Player").enemy_scored()
