@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://paddle1.png" type="Texture" id=1]
+[ext_resource path="res://Apple2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://bg.png" type="Texture" id=3]
+[ext_resource path="res://paddle2.png" type="Texture" id=4]
+[ext_resource path="res://paddle3.png" type="Texture" id=5]
+[ext_resource path="res://Paddle.gd" type="Script" id=6]
+[ext_resource path="res://rampart.png" type="Texture" id=7]
+[ext_resource path="res://enemy.png" type="Texture" id=8]
+[ext_resource path="res://MadBomber.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.798, 2.57129 )
+
+[sub_resource type="Theme" id=2]
+default_font = ExtResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[node name="RootNode" type="Node2D"]
+position = Vector2( -0.445435, 0 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 120, 67.5 )
+texture = ExtResource( 3 )
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 120, 110 )
+
+[node name="Paddle1" type="Area2D" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player/Paddle1"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Paddle1"]
+shape = SubResource( 1 )
+
+[node name="Paddle2" type="Area2D" parent="Player"]
+position = Vector2( 0, 9 )
+
+[node name="Sprite" type="Sprite" parent="Player/Paddle2"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Paddle2"]
+shape = SubResource( 1 )
+
+[node name="Paddle3" type="Area2D" parent="Player"]
+position = Vector2( 0, 18 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Player/Paddle3"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Paddle3"]
+shape = SubResource( 1 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 2.11225
+margin_top = 4.58419
+margin_right = 114.112
+margin_bottom = 20.5842
+rect_scale = Vector2( 0.489216, 0.489216 )
+theme = SubResource( 2 )
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameStatusLabel" type="Label" parent="."]
+margin_left = 80.9651
+margin_top = 63.5134
+margin_right = 234.965
+margin_bottom = 79.5134
+rect_scale = Vector2( 0.489216, 0.489216 )
+theme = SubResource( 2 )
+text = "Press Space"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rampart" type="Sprite" parent="."]
+position = Vector2( 120, 28 )
+texture = ExtResource( 7 )
+
+[node name="MadBomber" type="Area2D" parent="."]
+position = Vector2( 120, 18.022 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MadBomber"]
+shape = SubResource( 3 )
+
+[node name="enemy" type="Sprite" parent="MadBomber"]
+texture = ExtResource( 8 )
