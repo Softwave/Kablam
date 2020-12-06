@@ -1,13 +1,6 @@
-extends KinematicBody2D
+extends Area2D 
 
-var velocity = Vector2()
-
-func _ready():
-	velocity.y = 60
+var bomb_speed = 50 
 
 func _physics_process(delta):
-	move_and_slide(velocity)
-
-func _on_area_entered(area):
-	if area.name == "Paddle1":
-		print("boomb")
+	position += transform.y * bomb_speed * delta

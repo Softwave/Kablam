@@ -8,13 +8,13 @@ extents = Vector2( 2.71543, 14.7698 )
 
 [node name="RootBulletScene" type="Node2D"]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="BombArea" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="bomb" type="Sprite" parent="KinematicBody2D"]
+[node name="bomb" type="Sprite" parent="BombArea"]
 scale = Vector2( 0.985472, 0.95609 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombArea"]
 scale = Vector2( 0.743534, 0.134524 )
 shape = SubResource( 1 )

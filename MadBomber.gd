@@ -35,7 +35,10 @@ func move_left(delta):
 func drop_bomb():
 	var projectile = load("res://BombScene.tscn")
 	var bomb = projectile.instance()
-	add_child_below_node(get_tree().get_root().get_node("."), bomb)
+	owner.add_child(bomb)
+	bomb.transform = global_transform
+	#add_child_below_node(get_tree().get_root().get_node("."), bomb)
+
 	
 
 func _process(delta):
