@@ -69,29 +69,38 @@ func _process(delta):
 		# Base the bombers speed on the score of the player 
 		var tmp_player_score = Globals.global_player_score
 		if (tmp_player_score < 5):
+			# Level 1
 			move_speed = 0.5
 		elif (tmp_player_score >= 5 and tmp_player_score < 10):
+			# Level 2 
 			move_speed = 0.75
 			bomb_speed = 55
 		elif(tmp_player_score >= 10 and tmp_player_score < 20):
+			# Level 3
 			move_speed = 1
 			bomb_speed = 60
 		elif (tmp_player_score >= 20 and tmp_player_score < 40):
+			# Level 4
 			move_speed = 1.5
 			bomb_speed = 75
 		elif (tmp_player_score >= 40 and tmp_player_score < 60):
+			# Level 5
 			move_speed = 2
 			bomb_speed = 80
 		elif (tmp_player_score >= 60 and tmp_player_score < 80):
+			# Level 6
 			move_speed = 3
 			bomb_speed = 100
 		elif (tmp_player_score >= 80 and tmp_player_score < 100):
+			# Level 7
 			move_speed = 4
 			bomb_speed = 120
 		elif (tmp_player_score >= 100 and tmp_player_score < 120):
+			# Level 8
 			move_speed = 5
 			bomb_speed = 140
 		else:
+			# level 9 
 			move_speed = 5
 			bomb_speed = 150
 
