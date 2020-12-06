@@ -7,6 +7,8 @@ var velocity = Vector2()
 var moving_left = false
 var moving_right = false 
 
+export var max_speed = 5
+
 
 func rand_position():
 	print("rand position called")
@@ -30,7 +32,11 @@ func move_left(delta):
 	position.x -= move_speed
 	
 
-
+func drop_bomb():
+	var projectile = load("res://BombScene.tscn")
+	var bomb = projectile.instance()
+	add_child_below_node(get_tree().get_root().get_node("."), bomb)
+	
 
 func _process(delta):
 	if !(get_node("../Player/Paddle3").get("is_paused")):
@@ -50,5 +56,8 @@ func _process(delta):
 			#print("We are equal")
 			move_left(delta)
 		position += velocity * delta
+		
+	if Input.is_action_just_pressed("test_fire"):
+		drop_bomb()
 
 		

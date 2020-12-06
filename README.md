@@ -1,2 +1,3 @@
 # Kablam
- A little game made with Godot
+
+A little game made with Godot.
