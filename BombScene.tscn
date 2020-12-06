@@ -8,7 +8,9 @@ extents = Vector2( 2.71543, 14.7698 )
 
 [node name="RootBulletScene" type="Node2D"]
 
-[node name="BombArea" type="Area2D" parent="."]
+[node name="BombArea" type="Area2D" parent="." groups=[
+"bombs",
+]]
 script = ExtResource( 2 )
 
 [node name="bomb" type="Sprite" parent="BombArea"]

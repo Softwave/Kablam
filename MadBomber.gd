@@ -37,6 +37,7 @@ func drop_bomb():
 	var bomb = projectile.instance()
 	owner.add_child(bomb)
 	bomb.transform = global_transform
+	get_tree().call_group("bombs", "connect")
 	#add_child_below_node(get_tree().get_root().get_node("."), bomb)
 
 	

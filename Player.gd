@@ -28,6 +28,15 @@ func enemy_scored():
 		get_node("Paddle2").queue_free()
 	else:
 		print("Game Over")
+		
+	# Now we pause the game 
+	get_node("../GameStatusLabel").text = "Press Space"
+	get_node("Paddle3").is_paused = true
+	
+	# Delete all the bombs 
+	var enemies = get_tree().get_nodes_in_group("bombs")
+	for enemy in enemies:
+		enemy.queue_free()
 	
 #	if (player_paddles == 3):
 #		get_node("Paddle1").queue_free()
