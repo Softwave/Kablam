@@ -31,4 +31,9 @@ func _process(delta):
 func _on_Paddle3_area_entered(area):
 	get_node("../ScorePlay").play()
 	get_node("..").score_points()
+	# Make explosion 
+	var bomb_scene = load("res://BombParticles.tscn")
+	var bomb_particles = bomb_scene.instance()
+	owner.add_child(bomb_particles)
+	bomb_particles.transform = global_transform
 	area.queue_free()

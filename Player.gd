@@ -16,6 +16,17 @@ func score_points():
 	Globals.global_player_score += 1
 	get_node("../ScoreLabel").text = "Score: " + str(Globals.global_player_score)
 	
+	
+	
+#func drop_bomb():
+#	var projectile = load("res://BombScene.tscn")
+#	var bomb = projectile.instance()
+#	owner.add_child(bomb)
+#	bomb.transform = global_transform
+#	get_tree().call_group("bombs", "connect")
+#	#add_child_below_node(get_tree().get_root().get_node("."), bomb)
+
+	
 
 func enemy_scored():
 	print("Enemy scored")
