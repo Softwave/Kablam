@@ -112,6 +112,9 @@ shape = SubResource( 3 )
 [node name="enemy" type="Sprite" parent="MadBomber"]
 texture = ExtResource( 8 )
 
+[node name="Timer" type="Timer" parent="MadBomber"]
+wait_time = 0.2
+
 [node name="Goal" type="Area2D" parent="."]
 script = ExtResource( 15 )
 
@@ -125,4 +128,5 @@ shape = SubResource( 4 )
 [connection signal="area_entered" from="Player/Paddle1" to="Player/Paddle1" method="_on_Paddle1_area_entered"]
 [connection signal="area_entered" from="Player/Paddle2" to="Player/Paddle2" method="_on_Paddle2_area_entered"]
 [connection signal="area_entered" from="Player/Paddle3" to="Player/Paddle3" method="_on_Paddle3_area_entered"]
+[connection signal="timeout" from="MadBomber/Timer" to="MadBomber" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="Goal" to="Goal" method="_on_Goal_area_entered"]

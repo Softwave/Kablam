@@ -10,6 +10,7 @@ func _get_input(delta):
 		if (is_paused):
 			is_paused = false
 			get_node("../../GameStatusLabel").text = ""
+			get_node("../../MadBomber/Timer").start()
 	
 func _process(delta):
 	_get_input(delta)

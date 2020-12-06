@@ -20,6 +20,7 @@ func score_points():
 func enemy_scored():
 	print("Enemy scored")
 	get_node("BoomPlay").play()
+	get_node("../MadBomber/Timer").stop()
 	
 	if (get_node_or_null("Paddle1")):
 		player_paddles = 2
@@ -29,6 +30,7 @@ func enemy_scored():
 		get_node("Paddle2").queue_free()
 	else:
 		print("Game Over")
+		get_tree().change_scene("res://scenes/test_gameover.tscn")
 		
 	# Now we pause the game 
 	get_node("../GameStatusLabel").text = "Press Space"

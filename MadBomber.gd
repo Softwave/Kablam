@@ -8,6 +8,8 @@ var moving_left = false
 var moving_right = false 
 var bomb_speed = 50
 
+
+
 export var max_speed = 5
 
 
@@ -19,6 +21,8 @@ func rand_position():
 func _ready():
 	can_move = true
 	rand_position()
+	
+
 	
 func move_right(delta):
 	moving_left = false
@@ -68,15 +72,32 @@ func _process(delta):
 			move_speed = 0.5
 			print("level 1")
 		elif (tmp_player_score >= 5 and tmp_player_score < 10):
-			move_speed = 1
-			bomb_speed = 100
+			move_speed = 0.75
+			bomb_speed = 75
 			print("level 2")
 		elif(tmp_player_score >= 10 and tmp_player_score < 20):
-			move_speed = 2
+			move_speed = 1
+			bomb_speed = 100
 			print("level 3")
-		else:
+		elif (tmp_player_score >= 20 and tmp_player_score < 30):
+			move_speed = 1.5
+			bomb_speed = 125
+		elif (tmp_player_score >= 30 and tmp_player_score < 40):
+			move_speed = 2
+			bomb_speed = 125
+		elif (tmp_player_score >= 40 and tmp_player_score < 50):
 			move_speed = 3
-			print("level 4")
+			bomb_speed = 150
+		elif (tmp_player_score >= 50 and tmp_player_score < 60):
+			move_speed = 4
+			bomb_speed = 160
+		elif (tmp_player_score >= 60 and tmp_player_score < 70):
+			move_speed = 5
+			bomb_speed = 200
+		else:
+			move_speed = 5
+			bomb_speed = 200
+			print("level last")
 			
 		# Also 
 		var bombs = get_tree().get_nodes_in_group("bombs")
@@ -94,3 +115,7 @@ func _process(delta):
 		drop_bomb()
 
 		
+
+
+func _on_Timer_timeout():
+	drop_bomb()
